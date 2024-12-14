@@ -1,0 +1,14 @@
+@startuml
+actor User
+participant "Library System" as System
+participant "Database" as DB
+
+User -> System: Login(username, password)
+System -> DB: Validate Credentials
+DB --> System: Validation Response
+alt Credentials Valid
+    System --> User: Login Successful
+else Credentials Invalid
+    System --> User: Login Failed
+end
+@enduml

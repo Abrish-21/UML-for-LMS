@@ -1,0 +1,32 @@
+@startuml
+class User {
+  + userID: String
+  + name: String
+  + email: String
+  + role: String
+  + login(): Boolean
+  + logout(): Boolean
+}
+
+class Admin {
+  + createAccount(): Boolean
+  + deleteAccount(): Boolean
+  + resetPassword(): Boolean
+}
+
+class Member {
+  + searchCatalog(): List
+  + borrowBook(): Boolean
+  + returnBook(): Boolean
+}
+
+class Librarian {
+  + manageInventory(): Boolean
+  + issueBook(): Boolean
+  + returnBook(): Boolean
+}
+
+User <|-- Admin
+User <|-- Member
+User <|-- Librarian
+@enduml

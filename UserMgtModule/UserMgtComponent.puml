@@ -1,0 +1,10 @@
+@startuml
+package "User Management Component" {
+  [Authentication Module]
+  [User Profile Manager]
+  [Permission Manager]
+}
+
+[Authentication Module] --> [User Profile Manager]
+[Permission Manager] --> [User Profile Manager]
+@enduml
