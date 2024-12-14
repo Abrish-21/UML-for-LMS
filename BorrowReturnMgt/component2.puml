@@ -1,0 +1,12 @@
+@startuml
+package "Borrow and Return Management Module" {
+  [Borrow Manager]
+  [Return Processor]
+  [Fine Calculator]
+  [Reservation Manager]
+}
+
+[Borrow Manager] --> [Fine Calculator]
+[Return Processor] --> [Fine Calculator]
+[Reservation Manager] --> [Borrow Manager]
+@enduml

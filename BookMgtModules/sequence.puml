@@ -1,0 +1,10 @@
+@startuml
+actor User
+participant "Library System" as System
+participant "Database" as DB
+
+User -> System: Search Book(query)
+System -> DB: Fetch matching books(query)
+DB --> System: List of matching books
+System --> User: Display search results
+@enduml

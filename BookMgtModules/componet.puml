@@ -1,0 +1,10 @@
+@startuml
+package "Book Management Module" {
+  [Book Catalog Manager]
+  [Search Engine]
+  [Availability Checker]
+}
+
+[Book Catalog Manager] --> [Search Engine]
+[Search Engine] --> [Availability Checker]
+@enduml

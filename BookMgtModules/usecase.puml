@@ -1,0 +1,20 @@
+@startuml
+left to right direction
+actor "Admin" as Admin
+actor "Librarian" as Librarian
+actor "User" as User
+
+usecase "Add Books" as UC1
+usecase "Edit Book Information" as UC2
+usecase "Delete Books" as UC3
+usecase "Search Books" as UC4
+usecase "Check Book Availability" as UC5
+
+Admin --> UC1
+Admin --> UC2
+Admin --> UC3
+Librarian --> UC4
+Librarian --> UC5
+User --> UC4
+User --> UC5
+@enduml

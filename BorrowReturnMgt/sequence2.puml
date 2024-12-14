@@ -1,0 +1,15 @@
+@startuml
+actor User
+participant "Library System" as System
+participant "Database" as DB
+
+User -> System: Request to Borrow Book(bookID)
+System -> DB: Check Book Availability(bookID)
+alt Book Available
+    System -> DB: Create Borrow Transaction(userID, bookID)
+    DB --> System: Transaction Details
+    System --> User: Book Borrowed Successfully
+else Book Not Available
+    System --> User: Borrow Request Denied
+end
+@enduml

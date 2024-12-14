@@ -1,0 +1,34 @@
+@startuml
+class Book {
+  + bookID: String
+  + title: String
+  + isAvailable: Boolean
+}
+
+class BorrowTransaction {
+  + transactionID: String
+  + userID: String
+  + bookID: String
+  + borrowDate: Date
+  + dueDate: Date
+  + returnDate: Date
+  + calculateFine(): Double
+}
+
+class User {
+  + userID: String
+  + name: String
+  + borrowBook(bookID: String): Boolean
+  + returnBook(transactionID: String): Boolean
+  + renewBook(transactionID: String): Boolean
+}
+
+class Librarian {
+  + issueBook(userID: String, bookID: String): Boolean
+  + receiveBook(transactionID: String): Boolean
+}
+
+Book <.. BorrowTransaction
+User <.. BorrowTransaction
+Librarian <.. BorrowTransaction
+@enduml

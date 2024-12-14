@@ -1,0 +1,19 @@
+@startuml
+left to right direction
+actor "Librarian" as Librarian
+actor "User" as User
+
+usecase "Borrow Book" as UC1
+usecase "Return Book" as UC2
+usecase "Renew Borrowed Book" as UC3
+usecase "Reserve Book" as UC4
+usecase "Calculate Fines" as UC5
+
+Librarian --> UC1
+Librarian --> UC2
+Librarian --> UC5
+User --> UC1
+User --> UC2
+User --> UC3
+User --> UC4
+@enduml
