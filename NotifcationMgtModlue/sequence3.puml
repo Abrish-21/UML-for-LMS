@@ -1,0 +1,13 @@
+@startuml
+actor Librarian
+participant "Library System" as System
+participant "Database" as DB
+participant "Notification Service" as NotificationService
+
+Librarian -> System: Request to Send Overdue Notifications
+System -> DB: Fetch Overdue Borrowers
+DB --> System: List of Borrowers
+System -> NotificationService: Send Notifications to Borrowers
+NotificationService --> System: Delivery Status
+System --> Librarian: Notification Sent Successfully
+@enduml

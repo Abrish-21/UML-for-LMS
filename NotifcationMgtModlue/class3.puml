@@ -1,0 +1,29 @@
+@startuml
+class Notification {
+  + notificationID: String
+  + recipient: String
+  + message: String
+  + type: String
+  + send(): Boolean
+}
+
+class Report {
+  + reportID: String
+  + title: String
+  + content: String
+  + generateReport(criteria: String): Boolean
+}
+
+class User {
+  + userID: String
+  + viewNotifications(): List<Notification>
+}
+
+class Librarian {
+  + generateReport(criteria: String): Report
+  + sendNotification(notification: Notification): Boolean
+}
+
+Notification <.. User
+Report <.. Librarian
+@enduml

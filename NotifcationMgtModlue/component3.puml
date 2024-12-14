@@ -1,0 +1,10 @@
+@startuml
+package "Notification and Reporting Module" {
+  [Notification Manager]
+  [Report Generator]
+  [Email/SMS Service]
+}
+
+[Notification Manager] --> [Email/SMS Service]
+[Report Generator] --> [Notification Manager]
+@enduml
